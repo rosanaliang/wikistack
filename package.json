@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/MasonLS/wikistack#readme",
   "dependencies": {
+    "bluebird": "^3.4.1",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "nodemon": "^1.10.0",

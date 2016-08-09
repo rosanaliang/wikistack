@@ -26,12 +26,16 @@ var Page = db.define('page', {
 	},
 	status: {
 		type: Sequelize.ENUM('open', 'closed')
+	},
+	tags: {
+		type: Sequelize.ARRAY(Sequelize.TEXT),
+		allowNull: true
 	}
   }, {
   	getterMethods: {
 		route: function(){return '/wiki/' + this.urlTitle}
 	   }
-  });
+ });
 
 function urlTitlize(title) {
 	if(title) {
@@ -61,6 +65,9 @@ var User = db.define('user', {
 		isEmail: true
 	}
 });
+
+Page.belongsTo(User, { as: 'author' });
+//User.belongsTo(Page, { as: 'author' });
 
 module.exports = {
 	Page: Page,

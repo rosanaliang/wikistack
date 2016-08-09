@@ -3,13 +3,13 @@
 {% block content %}
   <br>
   <br>
-  <h3>Pages</h3>
+  <h3>Users</h3>
   <hr>
   <ul class="list-unstyled">
-    <!-- PLACEHOLDER LIST OF PAGES -->
+    <!-- PLACEHOLDER LIST OF USERS -->
     <ul>
-      {% for page in pages %}
-        <li><a href="{{page.urlTitle}}">{{page.title}}</a></li>
+      {% for user in users %}
+        <li><a href="/wiki/users/{{user.uid}}">{{user.name}}</a></li>
       {% endfor %}
     </ul>
 
